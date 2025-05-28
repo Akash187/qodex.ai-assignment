@@ -1,11 +1,17 @@
-type IProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-	children?: React.ReactNode
-}
 import classes from './Button.module.css'
 
-const Button = ({ children, ...rest }: IProps) => {
+type IProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+	children?: React.ReactNode
+	circular?: boolean
+}
+
+const Button = ({ children, circular, ...rest }: IProps) => {
+	const btnClass = circular
+		? `${classes.button} ${classes.circular}`
+		: classes.button
+
 	return (
-		<button className={classes.button} {...rest}>
+		<button className={btnClass} {...rest}>
 			{children}
 		</button>
 	)

@@ -1,0 +1,22 @@
+.searchBar {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border-radius: 2rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	padding: 0.25rem 0.5rem;
+	gap: 0.5rem;
+	max-width: 400px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.icon {
+	color: #0f766e;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+.icon:hover {
+	color: #115e59;
+}
