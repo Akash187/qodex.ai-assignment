@@ -11,15 +11,18 @@ import 'react-multi-carousel/lib/styles.css'
 import Temp from '@/components/home/temp/Temp'
 import Day from '@/components/home/day/Day'
 import Time from '@/components/home/time/Time'
-
-const q = 'jaunpur'
+import { useState } from 'react'
 
 // console.log(`${entry.time} | ${entry.temp}°C | ${entry.weather} | ${entry.icon}`)
 
 const Main = () => {
+	const [city, setCity] = useState<string>(
+		localStorage.getItem('city') || 'Delhi'
+	)
+
 	const { data, error, isError, isLoading } = useQuery({
-		queryKey: ['weather', q],
-		queryFn: () => getWeatherDataAPI(q),
+		queryKey: ['weather', city],
+		queryFn: () => getWeatherDataAPI(city),
 		refetchOnWindowFocus: true,
 		refetchOnReconnect: false,
 		refetchOnMount: false,
@@ -30,10 +33,14 @@ const Main = () => {
 	return (
 		<div className={classes.main}>
 			<div className={classes.container}>
-				<SearchBar />
+				<SearchBar setCity={setCity} isLoading={isLoading} />
 				<div className={classes.mainContent}>
 					{isLoading && <Loader />}
-					{isError && <div style={{ color: 'red' }}>{error.message}</div>}
+					{isError && (
+						<div style={{ color: 'red', textAlign: 'center' }}>
+							{error.message}
+						</div>
+					)}
 					{data && (
 						<>
 							<CurrentWeather
@@ -41,7 +48,7 @@ const Main = () => {
 								temp={data[0].temp}
 								iconCode={data[0].icon}
 								weather={data[0].weather as WeatherCondition}
-								city={q}
+								city={city}
 							/>
 							<hr />
 							<div className={classes.futureForecast}>
