@@ -8,6 +8,8 @@ type State = {
 	alertLevel: 'ERROR' | 'SUCCESS'
 	alertMessage: string
 	isLoggedIn?: boolean
+	userId?: string | undefined
+	openedSidenav?: boolean
 }
 type Action =
 	| { type: 'SET_UNIT'; payload: TempUnit }
@@ -16,7 +18,11 @@ type Action =
 			payload: { level: 'ERROR' | 'SUCCESS'; message: string }
 	  }
 	| { type: 'HIDE_ALERT' }
-	| { type: 'SET_LOGGED_IN'; payload: boolean }
+	| {
+			type: 'SET_LOGGED_IN'
+			payload: { isLoggedIn: boolean; userId: string | undefined }
+	  }
+	| { type: 'TOGGLE_SIDENAV' }
 
 type IProps = {
 	children: React.ReactNode
@@ -49,7 +55,13 @@ const reducer = (state: State, action: Action): State => {
 				alertMessage: ''
 			}
 		case 'SET_LOGGED_IN':
-			return { ...state, isLoggedIn: action.payload }
+			return {
+				...state,
+				isLoggedIn: action.payload.isLoggedIn,
+				userId: action.payload.userId
+			}
+		case 'TOGGLE_SIDENAV':
+			return { ...state, openedSidenav: !state.openedSidenav }
 		default:
 			return state
 	}
@@ -61,7 +73,9 @@ export const GlobalStoreProvider = ({ children }: IProps) => {
 		showAlert: false,
 		alertLevel: 'SUCCESS',
 		alertMessage: '',
-		isLoggedIn: false
+		isLoggedIn: false,
+		openedSidenav: false,
+		userId: undefined
 	})
 	return (
 		<GlobalStoreContext.Provider value={{ state, dispatch }}>

@@ -40,7 +40,10 @@ const AuthModal = ({ open, onClose }: IProps) => {
 					message: `${title} successful`
 				}
 			})
-			dispatch({ type: 'SET_LOGGED_IN', payload: true })
+			dispatch({
+				type: 'SET_LOGGED_IN',
+				payload: { isLoggedIn: true, userId: data?.user?.id }
+			})
 			onClose()
 		},
 		onError: (err) => {

@@ -18,7 +18,10 @@ const Navbar = () => {
 	const { mutate, isPending } = useMutation({
 		mutationFn: logout,
 		onSuccess: () => {
-			dispatch({ type: 'SET_LOGGED_IN', payload: false })
+			dispatch({
+				type: 'SET_LOGGED_IN',
+				payload: { isLoggedIn: false, userId: undefined }
+			})
 			dispatch({
 				type: 'SHOW_ALERT',
 				payload: {
@@ -41,7 +44,15 @@ const Navbar = () => {
 	return (
 		<div className={classes.navbar}>
 			<div className={classes.container}>
-				<Logo />
+				<div className={classes.left}>
+					<button
+						onClick={() => dispatch({ type: 'TOGGLE_SIDENAV' })}
+						className={classes.openBtn}
+					>
+						&#9776;
+					</button>
+					<Logo />
+				</div>
 				<div className={classes.right}>
 					<TempUnit />
 					{isLoggedIn ? (

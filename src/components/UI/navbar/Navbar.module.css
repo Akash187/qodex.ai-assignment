@@ -22,8 +22,34 @@
 	padding: 0 20px;
 }
 
+.left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
 .right {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+}
+
+.openBtn {
+	display: none;
+	background: #0f766e;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 2rem;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+	.openBtn {
+		display: block;
+	}
 }
