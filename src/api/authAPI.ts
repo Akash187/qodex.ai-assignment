@@ -42,10 +42,10 @@ export const logout = async () => {
 }
 
 export const getUserSession = async () => {
-	const { data, error } = await supabase.auth.getSession()
+	const { data, error } = await supabase.auth.getUser()
 
 	if (error) {
 		throw error
 	}
-	return data.session
+	return data.user
 }
