@@ -1,7 +1,9 @@
-import Home from '@/pages/home/Home'
+import PageLoader from '@/components/UI/page-loader/PageLoader'
 import { GlobalStoreProvider } from '@/store/GlobalStore'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { lazy, Suspense } from 'react'
+const Home = lazy(() => import('@/pages/home/Home'))
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -16,9 +18,9 @@ const App = () => {
 	return (
 		<GlobalStoreProvider>
 			<QueryClientProvider client={queryClient}>
-				<div>
+				<Suspense fallback={<PageLoader />}>
 					<Home />
-				</div>
+				</Suspense>
 				<ReactQueryDevtools
 					initialIsOpen={false}
 					buttonPosition="bottom-left"
