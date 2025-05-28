@@ -1,0 +1,22 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.switchForm {
+	text-align: center;
+}
+
+.link {
+	color: #0f766e;
+	cursor: pointer;
+	text-decoration: underline;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+
+.link:hover {
+	color: #115e59;
+	text-decoration: underline;
+}
