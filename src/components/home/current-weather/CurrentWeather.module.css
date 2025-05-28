@@ -22,3 +22,27 @@
 	font-size: 1.5rem;
 	font-weight: 500;
 }
+
+@media (max-width: 576px) {
+	.currentWeather {
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+	.contentLeft {
+		font-size: 1.2rem;
+		flex-direction: row;
+		gap: 2rem;
+		justify-content: center;
+		align-items: center;
+	}
+	.contentRight {
+		font-size: 1.2rem;
+		flex-direction: row;
+		gap: 2rem;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}

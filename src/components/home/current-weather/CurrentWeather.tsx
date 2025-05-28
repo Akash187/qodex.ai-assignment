@@ -2,6 +2,7 @@ import Temp from '@/components/home/temp/Temp'
 import Time from '@/components/home/time/Time'
 import type { WeatherCondition } from '@/types/index.types'
 import classes from './CurrentWeather.module.css'
+import Button from '@/components/UI/Button/Button'
 
 type IProps = {
 	time: Date
@@ -17,12 +18,12 @@ const CurrentWeather = ({ time, temp, weather, iconCode, city }: IProps) => {
 			<div className={classes.contentLeft}>
 				<h2>Today</h2>
 				<Temp temp={temp} />
-				<button>Save</button>
+				<Button style={{ fontSize: '1rem' }}>Save</Button>
 			</div>
 			<div>
 				<img
 					src={`https://openweathermap.org/img/wn/${iconCode}@4x.png`}
-					alt="Weather icon"
+					alt={`${weather} photo`}
 				/>
 			</div>
 			<div className={classes.contentRight}>

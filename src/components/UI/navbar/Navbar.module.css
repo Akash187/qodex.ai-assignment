@@ -6,6 +6,10 @@
 	height: var(--navbar-height);
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
 	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .container {
