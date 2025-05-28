@@ -1,0 +1,29 @@
+.alert {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	min-width: 240px;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	color: #fff;
+	font-weight: 500;
+	z-index: 2000;
+	opacity: 0;
+	transform: translateX(120%);
+	transition: opacity 0.3s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.show {
+	opacity: 1;
+	transform: translateX(0);
+	pointer-events: auto;
+}
+
+.success {
+	background: #16a34a;
+}
+
+.error {
+	background: #dc2626;
+}

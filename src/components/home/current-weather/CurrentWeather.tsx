@@ -3,6 +3,7 @@ import Time from '@/components/home/time/Time'
 import type { WeatherCondition } from '@/types/index.types'
 import classes from './CurrentWeather.module.css'
 import Button from '@/components/UI/Button/Button'
+import { useGlobalStore } from '@/store/GlobalStore'
 
 type IProps = {
 	time: Date
@@ -13,12 +14,17 @@ type IProps = {
 }
 
 const CurrentWeather = ({ time, temp, weather, iconCode, city }: IProps) => {
+	const {
+		state: { isLoggedIn }
+	} = useGlobalStore()
 	return (
 		<div className={classes.currentWeather}>
 			<div className={classes.contentLeft}>
 				<h2>Today</h2>
 				<Temp temp={temp} />
-				<Button style={{ fontSize: '1rem' }}>Save</Button>
+				<Button disabled={!isLoggedIn} style={{ fontSize: '1rem' }}>
+					{isLoggedIn ? 'Save' : 'Login to save'}
+				</Button>
 			</div>
 			<div>
 				<img
