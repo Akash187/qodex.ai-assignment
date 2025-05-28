@@ -40,3 +40,12 @@ export const logout = async () => {
 	}
 	return true
 }
+
+export const getUserSession = async () => {
+	const { data, error } = await supabase.auth.getSession()
+
+	if (error) {
+		throw error
+	}
+	return data.session
+}
