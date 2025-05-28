@@ -45,7 +45,7 @@ const Navbar = () => {
 				<div className={classes.right}>
 					<TempUnit />
 					{isLoggedIn ? (
-						<Button disabled={isPending} onClick={mutate}>
+						<Button disabled={isPending} onClick={() => mutate()}>
 							Logout
 						</Button>
 					) : (
