@@ -13,8 +13,6 @@ import Day from '@/components/home/day/Day'
 import Time from '@/components/home/time/Time'
 import { useState } from 'react'
 
-// console.log(`${entry.time} | ${entry.temp}°C | ${entry.weather} | ${entry.icon}`)
-
 const Main = () => {
 	const [city, setCity] = useState<string>(
 		localStorage.getItem('city') || 'Delhi'
@@ -26,8 +24,7 @@ const Main = () => {
 		refetchOnWindowFocus: true,
 		refetchOnReconnect: false,
 		refetchOnMount: false,
-		staleTime: 30, // 30 seconds
-		retry: 1
+		refetchInterval: 30000
 	})
 
 	return (

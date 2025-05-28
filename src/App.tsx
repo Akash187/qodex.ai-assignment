@@ -8,7 +8,7 @@ const Home = lazy(() => import('@/pages/home/Home'))
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
-			staleTime: 1 * 60 * 60 * 1000, //1hr
+			staleTime: 30 * 1000, //30 sec
 			retry: 1
 		}
 	}
