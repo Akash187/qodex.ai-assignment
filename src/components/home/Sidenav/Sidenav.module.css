@@ -22,11 +22,14 @@
 	flex-direction: column;
 	justify-content: center; /* vertical alignment */
 	align-items: center; /* horizontal alignment */
-	height: calc(100vh - var(--navbar-height)); /* full height */
 }
 
 .contentAlert {
 	/* Optional: style for the alert */
+	height: calc(100vh - var(--navbar-height)); /* full height */
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* vertical alignment */
 	color: #888;
 	font-size: 1.1rem;
 	padding: 1rem 0;
