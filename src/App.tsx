@@ -1,10 +1,9 @@
-import './styles/global.css'
+import Home from '@/pages/home/Home'
 
 const App = () => {
 	return (
 		<div>
-			Weather App
-			<p>Welcome to the Weather App!</p>
+			<Home />
 		</div>
 	)
 }

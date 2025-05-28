@@ -1,0 +1,19 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-primary);
+	height: var(--navbar-height);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+	z-index: 99;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: var(--breakpoint-lg);
+	margin: 0 auto;
+	padding: 0 20px;
+}

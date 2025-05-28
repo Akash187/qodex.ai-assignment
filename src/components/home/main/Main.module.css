@@ -1,0 +1,6 @@
+.main {
+	margin-top: var(----navbar-height);
+	background: url('@/assets/background.webp') center center/cover no-repeat;
+	object-fit: cover;
+	height: calc(100vh - var(--navbar-height));
+}
