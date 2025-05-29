@@ -15,7 +15,7 @@ const Alert = ({ level, message, onClose }: IProps) => {
 		const timer = setTimeout(() => {
 			setVisible(false)
 			if (onClose) onClose()
-		}, 3000)
+		}, 1500)
 		return () => clearTimeout(timer)
 	}, [onClose])
 
