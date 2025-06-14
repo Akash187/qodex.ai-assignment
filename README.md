@@ -2,7 +2,7 @@
 
 A weather app that lets users search for real-time forecasts in any location. With secure login, users can save favorite places, access past weather data, and receive personalized forecasts. All data is safely stored for easy retrieval across devices.
 
-### [Live Demo](https://openweather-app-cd4.pages.dev/)
+### [Live Demo](https://qodex-ai-assignment.pages.dev/)
 ### [Demo Video](https://drive.google.com/file/d/1doTj4OjRzWRJjYgl-miOJ8GK9y_VOiGn/view?usp=sharing)
 
 ## Features
