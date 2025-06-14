@@ -22,6 +22,9 @@ A weather app that lets users search for real-time forecasts in any location. Wi
 14. Used React Query to fetch and cache API data.
 15. Use supabase to login and save data.
 
+## Figma Design
+![Local Image](./public/design.png)
+
 ## Running locally
 
 Environment variables required
