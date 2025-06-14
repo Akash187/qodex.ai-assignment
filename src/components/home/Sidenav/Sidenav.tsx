@@ -5,6 +5,7 @@ import { useGlobalStore } from '@/store/GlobalStore'
 import { useQuery } from '@tanstack/react-query'
 import Loader from '@/components/UI/loader/Loader'
 import Temp from '@/components/home/temp/Temp'
+import dayjs from 'dayjs'
 
 const Sidenav = () => {
 	const {
@@ -88,7 +89,10 @@ const Sidenav = () => {
 									<h3>{tempData.place}</h3>
 									<Temp temp={tempData.temp} />
 								</div>
-								<p>Date: {new Date(tempData.temp_date).toLocaleDateString()}</p>
+								<p>
+									Saved At:{' '}
+									{dayjs(tempData.created_at).format('DD/MM/YYYY h:mm A')}
+								</p>
 							</div>
 						))}
 					</div>
